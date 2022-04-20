@@ -1,12 +1,19 @@
 import gulp from 'gulp'
-import rename from 'gulp-rename'
-import concat from 'gulp-concat'
-import del from 'del'
-import pug from 'gulp-pug'
-import htmlMinify from 'gulp-htmlmin'
-import sass from 'gulp-sass'
-import sourcemap from 'gulp-sourcemaps'
-import autoprefixer from 'gulp-autoprefixer'
-import cleanCSS from 'gulp-clean-css'
-import uglify from 'gulp-uglify'
-import imageMin from 'gulp-imagemin'
+
+import {path} from './gulp/config/path.js'
+
+global.app = {
+  path: path,
+  gulp
+}
+
+import { copy } from './gulp/tasks/copy.js'
+import { reset } from './gulp/tasks/reset.js'
+
+function watcher() {
+  gulp.watch(path.watch.files, copy)
+}
+
+const dev = gulp.series(reset, copy, watcher)
+
+gulp.task('default', dev)
