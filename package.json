@@ -16,6 +16,7 @@
   "author": "Evgeniy Shepelev <shepelev.ep@yandex.ru>",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.27.9",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-file-include": "^2.3.0",
