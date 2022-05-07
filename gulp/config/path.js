@@ -1,11 +1,12 @@
-import * as nodePath from 'path'
+import * as nodePath from "path";
 
-const rootFolder = nodePath.basename(nodePath.resolve())
-const srcFolder = './src'
-const buildFolder = './dist'
+const rootFolder = nodePath.basename(nodePath.resolve());
+const srcFolder = "./src";
+const buildFolder = "./dist";
 
 export const path = {
   build: {
+    js: `${buildFolder}/js/`,
     css: `${buildFolder}/css/`,
     html: `${buildFolder}/`,
     files: `${buildFolder}/files/`,
@@ -16,6 +17,7 @@ export const path = {
     files: `${srcFolder}/files/**/*.*`,
   },
   watch: {
+    scss: `${srcFolder}/js/**/*.js`,
     scss: `${srcFolder}/scss/**/*.scss`,
     html: `${srcFolder}/**/*.pug`,
     files: `${srcFolder}/files/**/*.*`,
@@ -23,5 +25,5 @@ export const path = {
   clean: buildFolder,
   buildFolder,
   srcFolder,
-  rootFolder
-}
+  rootFolder,
+};
