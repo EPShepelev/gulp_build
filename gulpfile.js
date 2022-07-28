@@ -19,7 +19,7 @@ import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
-import { svgSprite } from "./gulp/tasks/svgSprite.js";
+import { svg } from "./gulp/tasks/svgSprite.js";
 
 function watcher() {
   gulp.watch(path.watch.files, copy);
@@ -29,7 +29,7 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
-export { svgSprite };
+export { svg };
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 

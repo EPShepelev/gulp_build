@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --build",
-    "svgSprite": "gulp svgSprite"
+    "svg": "gulp svgSprite"
   },
   "keywords": [
     "gulp",
