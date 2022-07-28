@@ -11,7 +11,7 @@ const sass = gulpSass(dartSass);
 export const scss = () => {
   return app.gulp
     .src(app.path.src.scss, {
-      sourcemaps: true,
+      sourcemaps: app.isDev,
     })
     .pipe(
       app.plugins.plumber(
@@ -27,19 +27,25 @@ export const scss = () => {
         outputStyle: "expanded",
       })
     )
-    .pipe(groupCssMediaQueries())
+    .pipe(app.plugins.ifPlugin(app.isBuild, groupCssMediaQueries()))
     .pipe(
-      webpCss({
-        webpClass: ".webp",
-        noWebpClass: ".no-webp",
-      })
+      app.plugins.ifPlugin(
+        app.isBuild,
+        webpCss({
+          webpClass: ".webp",
+          noWebpClass: ".no-webp",
+        })
+      )
     )
     .pipe(
-      autoprefixer({
-        grid: true,
-        overrideBrowserslist: ["last 3 version"],
-        cascade: true,
-      })
+      app.plugins.ifPlugin(
+        app.isBuild,
+        autoprefixer({
+          grid: true,
+          overrideBrowserslist: ["last 3 version"],
+          cascade: true,
+        })
+      )
     )
     .pipe(app.gulp.dest(app.path.build.css)) // получаем несжатую копию итогового файла стилей
     .pipe(cleanCss())

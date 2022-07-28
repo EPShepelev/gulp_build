@@ -3,7 +3,7 @@ import webpack from "webpack-stream";
 export const js = () => {
   return app.gulp
     .src(app.path.src.js, {
-      sourcemaps: true,
+      sourcemaps: app.isDev,
     })
     .pipe(
       app.plugins.plumber(
@@ -15,7 +15,7 @@ export const js = () => {
     )
     .pipe(
       webpack({
-        mode: "development",
+        mode: app.isBuild ? "production" : "development",
         output: {
           filename: "app.min.js",
         },
