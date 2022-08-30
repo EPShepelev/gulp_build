@@ -33,4 +33,5 @@ export const path = {
   buildFolder,
   srcFolder,
   rootFolder,
+  ftp: `test`, // server folder to copy project files by ftp
 };

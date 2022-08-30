@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build --build",
+    "deploy": "gulp deployFTP --build",
     "svg": "gulp svgSprite"
   },
   "keywords": [
@@ -45,5 +46,9 @@
     "webp-converter": "2.2.3",
     "webpack": "^5.72.0",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.8",
+    "vinyl-ftp": "^0.6.1"
   }
 }
