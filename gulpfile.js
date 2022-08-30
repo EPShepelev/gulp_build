@@ -19,7 +19,7 @@ import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { otfToTtf, ttfToWoff, fontStyle } from "./gulp/tasks/fonts.js";
-import { svg } from "./gulp/tasks/svgSprite.js";
+import { svgSpriteCreate } from "./gulp/tasks/svgSprite.js";
 import { ftp } from "./gulp/tasks/ftp.js";
 
 function watcher() {
@@ -30,7 +30,7 @@ function watcher() {
   gulp.watch(path.watch.images, images);
 }
 
-export { svg };
+export { svgSpriteCreate };
 
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontStyle);
 

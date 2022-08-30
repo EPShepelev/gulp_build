@@ -1,6 +1,6 @@
 import svgSprite from "gulp-svg-sprite";
 
-export const svgSprite = () => {
+export const svgSpriteCreate = () => {
   return app.gulp
     .src(`${app.path.src.svgicons}`, {})
     .pipe(
@@ -15,7 +15,7 @@ export const svgSprite = () => {
       svgSprite({
         mode: {
           stack: {
-            sprite: `..icons/icons.svg`,
+            sprite: `icons/icons.svg`,
             example: true,
           },
         },

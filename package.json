@@ -8,7 +8,7 @@
     "dev": "gulp",
     "build": "gulp build --build",
     "deploy": "gulp deployFTP --build",
-    "svg": "gulp svgSprite"
+    "svg": "gulp svgSpriteCreate"
   },
   "keywords": [
     "gulp",
