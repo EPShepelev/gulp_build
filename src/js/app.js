@@ -1,4 +1,7 @@
-import { isWebp } from "./modules/functions.js";
-console.log("Hi!");
-// можно установить любой пакет в нод модули и импортировать его напрямую тут и использовать
-isWebp();
+import { testWebP } from "./modules/testWebP.js";
+
+// for dom based scripts
+document.addEventListener("DOMContentLoaded", function () {
+  //for correct webp/no-webp images and styles
+  testWebP();
+});
